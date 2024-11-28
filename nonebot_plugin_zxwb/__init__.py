@@ -5,6 +5,7 @@ from ._config import Config
 
 require("nonebot_plugin_alconna")
 require("nonebot_plugin_uninfo")
+require("nonebot_plugin_localstore")
 
 __plugin_meta__ = PluginMetadata(
     name="ZXWB词库问答",
