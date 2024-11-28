@@ -1,11 +1,11 @@
 from nonebot import require
 from nonebot.plugin import PluginMetadata, inherit_supported_adapters
 
-from ._config import Config
-
 require("nonebot_plugin_alconna")
 require("nonebot_plugin_uninfo")
 require("nonebot_plugin_localstore")
+
+from ._config import Config  # noqa: E402
 
 __plugin_meta__ = PluginMetadata(
     name="ZXWB词库问答",
