@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "nonebot-plugin-zxwb"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["HibiKier <775757368@qq.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-zhenxun-utils = "^0.1.1"
+zhenxun-utils = "^0.1.2"
 nonebot2 = "^2.3.3"
 nonebot-plugin-localstore = "^0.7.2"
 imagehash = "^4.3.1"
