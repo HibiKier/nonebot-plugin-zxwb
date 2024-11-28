@@ -12,7 +12,7 @@
 
 # nonebot-plugin-zxwb
 
-_✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 插件管理插件 ✨_
+_✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 词条管理插件 ✨_
 
 ![python](https://img.shields.io/badge/python-v3.10%2B-blue)
 ![nonebot](https://img.shields.io/badge/nonebot-v2.1.3-yellow)
