@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "nonebot-plugin-zxwb"
+version = "0.1.1"
+description = ""
+authors = ["HibiKier <775757368@qq.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+zhenxun-utils = "^0.1.1"
+nonebot2 = "^2.3.3"
+nonebot-plugin-localstore = "^0.7.2"
+imagehash = "^4.3.1"
+tortoise-orm = "0.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
