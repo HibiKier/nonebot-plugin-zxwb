@@ -23,7 +23,7 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的一个 词条管�
 
 ## 📖 介绍
 
-[小真寻](https://github.com/HibiKier/zhenxun_bot) 的词条问答插件
+[小真寻](https://github.com/HibiKier/zhenxun_bot)会替你记住一切的！
 
 - 对 全局/群组/私聊 进行区分
 - 支持 精准/模糊/正则/图片 匹配
