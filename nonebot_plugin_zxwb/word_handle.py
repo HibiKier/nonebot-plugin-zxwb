@@ -2,25 +2,25 @@ import re
 from typing import Any
 
 from nonebot import logger
-from nonebot.typing import T_State
-from nonebot.params import RegexGroup
 from nonebot.adapters import Bot, Event
-from nonebot_plugin_alconna import Text
-from nonebot_plugin_alconna import Image
-from nonebot_plugin_uninfo import Uninfo
-from zhenxun_utils.message import MessageUtils
 from nonebot.exception import FinishedException
 from nonebot.internal.params import Arg, ArgStr
-from zhenxun_utils.platform import PlatformUtils
+from nonebot.params import RegexGroup
+from nonebot.typing import T_State
+from nonebot_plugin_alconna import AlconnaQuery, Arparma
+from nonebot_plugin_alconna import Image
 from nonebot_plugin_alconna import Image as alcImage
+from nonebot_plugin_alconna import Match, Query, Text, UniMsg
 from nonebot_plugin_alconna.uniseg.tools import reply_fetch
-from nonebot_plugin_alconna import Match, Query, UniMsg, Arparma, AlconnaQuery
+from nonebot_plugin_uninfo import Uninfo
+from zhenxun_utils.message import MessageUtils
+from zhenxun_utils.platform import PlatformUtils
 
+from ._command import _add_matcher, _del_matcher, _update_matcher
+from ._config import ScopeType, WordType, scope2int, type2int
+from ._data_source import WordBankManage, get_answer, get_img_and_at_list, get_problem
 from ._model import WordBank
 from .exception import ImageDownloadError
-from ._config import WordType, ScopeType, type2int, scope2int
-from ._command import _add_matcher, _del_matcher, _update_matcher
-from ._data_source import WordBankManage, get_answer, get_problem, get_img_and_at_list
 
 
 @_add_matcher.handle()
@@ -192,9 +192,8 @@ async def _(
     if all.result:
         word_scope = ScopeType.GLOBAL
     gid = session.group.id if session.group else None
-    if session.user.id not in bot.config.superusers:
-        if not gid:
-            await MessageUtils.build_message("权限不足捏...").finish(reply_to=True)
+    if session.user.id not in bot.config.superusers and not gid:
+        await MessageUtils.build_message("权限不足捏...").finish(reply_to=True)
     result, old_problem = await WordBankManage.update_word(
         replace,
         problem.result if problem.available else "",

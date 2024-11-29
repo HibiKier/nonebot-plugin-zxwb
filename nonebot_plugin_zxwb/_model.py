@@ -34,7 +34,7 @@ def get_img_hash(image_file: str | Path) -> str:
         with open(image_file, "rb") as fp:
             hash_value = imagehash.average_hash(PilImage.open(fp))
     except Exception as e:
-        logger.warning("获取图片Hash出错", "禁言检测", e=e)
+        logger.warning(f"获取图片Hash出错 {type(e)}:{e}...")
     return str(hash_value)
 
 
@@ -210,7 +210,7 @@ class WordBank(Model):
                     / f"{user_id}_{placeholder}.jpg"
                 )
                 _file.parent.mkdir(exist_ok=True, parents=True)
-                logger.debug(f"下载词条回答图片url: {seg.url}", "添加词条")
+                logger.debug(f"下载词条回答图片url: {seg.url}")
                 if not await AsyncHttpx.download_file(seg.url, _file):
                     pass
                 placeholder_list.append(
