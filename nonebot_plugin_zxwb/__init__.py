@@ -65,9 +65,11 @@ __plugin_meta__ = PluginMetadata(
             用法与普通用法相同
     """,
     type="application",
-    homepage="https://github.com/HibiKier/nonebot-plugin-zxpm",
+    homepage="https://github.com/HibiKier/nonebot-plugin-zxwb",
     config=Config,
-    supported_adapters=inherit_supported_adapters("nonebot_plugin_alconna"),
+    supported_adapters=inherit_supported_adapters(
+        "nonebot_plugin_alconna", "nonebot_plugin_uninfo"
+    ),
     extra={"author": "HibiKier"},
 )
 
